@@ -2,10 +2,9 @@ version: "3.8"
 
 services:
   app:
-    build:
-      context: .
+    image: niceiyke/predict
     ports:
-      - "8000:8000"
+      - "8000:80"
     volumes:
       - ./app:/app
     command: >
