@@ -20,11 +20,10 @@ services:
       - chrome
 
   nginex:
-    image: nginx:latest
+    build: ./nginx
     ports:
       - 80:80
     volumes:
-      - ./nginex/nginex-setup.conf:/etc/nginex/conf.d/default.conf:ro
       - app:/app/var/wwww/static
 
     depends_on:
