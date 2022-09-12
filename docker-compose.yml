@@ -24,7 +24,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - app:/app/var/wwww/static
+      - app:/static
 
     depends_on:
       - app
