@@ -22,10 +22,10 @@ services:
   nginex:
     image: nginx:latest
     ports:
-      - 8000:8080
+      - 80:80
     volumes:
       - ./nginex/nginex-setup.conf:/etc/nginex/conf.d/default.conf:ro
-      - app:/app/var/wwww/staticfiles
+      - app:/app/var/wwww/static
 
     depends_on:
       - app
