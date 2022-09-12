@@ -20,15 +20,15 @@ services:
       - chrome
 
   nginex:
-  image: nginx:latest
-  ports:
-    -8000:8080
-  volumes:
-    - ./nginex/nginex-setup.conf:/etc/nginex/conf.d/default.conf:ro
-    - app:/app/var/wwww/staticfiles
+    image: nginx:latest
+    ports:
+      -8000:8080
+    volumes:
+     - ./nginex/nginex-setup.conf:/etc/nginex/conf.d/default.conf:ro
+     - app:/app/var/wwww/staticfiles
 
-  depends_on:
-    - app
+    depends_on:
+      - app
 
   db:
     image: postgres:14-alpine
