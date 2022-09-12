@@ -9,7 +9,7 @@ services:
       - ./app:/app
     command: >
       sh -c "python3 manage.py makemigrations &&
-            python3 manage.py migrate &&
+            python3 manage.py migrate && python3 manage.py collectstatic &&
              python3 manage.py wait_for_db &&
              gunicorn --bind 0.0.0.0:8000 app.wsgi"
 
@@ -18,6 +18,17 @@ services:
     depends_on:
       - db
       - chrome
+
+  nginex:
+  image: nginx:latest
+  ports:
+    -8000:8080
+  volumes:
+    - ./nginex/nginex-setup.conf:/etc/nginex/conf.d/default.conf:ro
+    - app:/app/var/wwww/staticfiles
+
+  depends_on:
+    - app
 
   db:
     image: postgres:14-alpine
@@ -62,4 +73,4 @@ services:
     depends_on:
       - redis
 volumes:
-  pgdata:
+  app:
