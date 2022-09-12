@@ -24,8 +24,8 @@ services:
     ports:
       - 8000:8080
     volumes:
-     - ./nginex/nginex-setup.conf:/etc/nginex/conf.d/default.conf:ro
-     - app:/app/var/wwww/staticfiles
+      - ./nginex/nginex-setup.conf:/etc/nginex/conf.d/default.conf:ro
+      - app:/app/var/wwww/staticfiles
 
     depends_on:
       - app
@@ -36,7 +36,7 @@ services:
     env_file:
       - ./.env.dev
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - app:/var/lib/postgresql/data
 
   chrome:
     image: selenium/standalone-chrome
