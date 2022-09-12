@@ -2,9 +2,9 @@ version: "3.8"
 
 services:
   app:
-    image: niceiyke/predict
+    build: .
     ports:
-      - "8000:80"
+      - "8000:8000"
     volumes:
       - ./app:/app
     command: >
@@ -20,7 +20,7 @@ services:
       - chrome
 
   db:
-    image: postgres:latest
+    image: postgres:14-alpine
     restart: always
     env_file:
       - ./.env.dev
