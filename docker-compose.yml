@@ -7,6 +7,7 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app
+      - static_volumes:/app/staticfiles
     command: >
       sh -c "python3 manage.py makemigrations &&
             python3 manage.py migrate && python3 manage.py collectstatic &&
@@ -24,7 +25,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - app:/static
+      - static_volumes:/app/staticfiles
 
     depends_on:
       - app
@@ -73,3 +74,4 @@ services:
       - redis
 volumes:
   app:
+  static_volumes: 
