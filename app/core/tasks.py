@@ -20,10 +20,8 @@ time.sleep(5)
 
 
 @shared_task
-def ScrapeResult():
-    
-    options = Options()
-    
+def ScrapeResult(): 
+    options = Options() 
     options.add_argument("--no-sandbox") 
     options.add_argument("--remote-debugging-port=9222")  # this
     options.add_argument("--headless") 
@@ -31,32 +29,33 @@ def ScrapeResult():
     
     driver = webdriver.Remote('http://chrome:4444/wd/hub',options=options)
     urls = [
-    'https://www.flashscore.com/football/england/premier-league'
-    'https://www.flashscore.com/football/england/championship'
-    'https://www.flashscore.com/football/germany/bundesliga'
-    'https://www.flashscore.com/football/germany/2-bundesliga'
-    'https://www.flashscore.com/football/italy/serie-a'
-    'https://www.flashscore.com/football/spain/laliga'
-    'https://www.flashscore.com/football/belarus/vysshaya-liga',
-    'https://www.flashscore.com/football/brazil/serie-a',
-    'https://www.flashscore.com/football/argentina/liga-profesional',
-    'https://www.flashscore.com/football/usa/mls',
-    'https://www.flashscore.com/football/norway/eliteserien',
-    'https://www.flashscore.com/football/china/super-league',
-    'https://www.flashscore.com/football/japan/j1-league',
-    'https://www.flashscore.com/football/egypt/premier-league',
-    'https://www.flashscore.com/football/sweden/allsvenskan',
-    'https://www.flashscore.com/football/norway/obos-ligaen',
-    'https://www.flashscore.com/football/sweden/superettan',
-
-
+    'england/premier-league'
+    'england/championship'
+    'england/league-one'
+    'england/league-two'
+    'germany/bundesliga'
+    'germany/2-bundesliga'
+    'italy/serie-a'
+    'spain/laliga'
+    'scotland/premiership'
+    'scotland/championship'
+    'belarus/vysshaya-liga',
+    'brazil/serie-a',
+    'argentina/liga-profesional',
+    'usa/mls',
+    'norway/eliteserien',
+    'china/super-league',
+    'japan/j1-league',
+    'egypt/premier-league',
+    'sweden/allsvenskan',
+    'norway/obos-ligaen',
+    'sweden/superettan',
 ]
 
     for url in urls:
         all_matches = []
-        all_leagues = []
         predictions = []
-        driver.get(f'{url}/results/')
+        driver.get(f'https://www.flashscore.com/football/{url}/results/')
         max_show = 3
         count = 0
         while count <= max_show:
@@ -105,7 +104,7 @@ def ScrapeResult():
                       awayscore]
             all_matches.append(result)
         try:
-            league = driver.find_element(By.CLASS_NAME, 'heading__name').text
+            league =url
         except:
             print('league')
         
@@ -131,7 +130,7 @@ def ScrapeResult():
 
         # scrape for fixture
 
-        driver.get(f'{url}/fixtures/')
+        driver.get(f'https://www.flashscore.com/football/{url}/fixtures/')
         all_fixtures = []
         matches = driver.find_elements(
             By.CLASS_NAME, 'event__match--scheduled')[0:14]

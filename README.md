@@ -8,4 +8,3 @@ Simply, run the following command:
 docker-compose up --build
 ```
 
-Follow me on IG for more: https://www.instagram.com/coderasha

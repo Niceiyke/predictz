@@ -1,5 +1,5 @@
 # Create your views here.
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from.models import Prediction
 from datetime import datetime, timedelta
 
