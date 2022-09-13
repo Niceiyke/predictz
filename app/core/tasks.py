@@ -31,6 +31,12 @@ def ScrapeResult():
     
     driver = webdriver.Remote('http://chrome:4444/wd/hub',options=options)
     urls = [
+    'https://www.flashscore.com/football/england/premier-league'
+    'https://www.flashscore.com/football/england/championship'
+    'https://www.flashscore.com/football/germany/bundesliga'
+    'https://www.flashscore.com/football/germany/2-bundesliga'
+    'https://www.flashscore.com/football/italy/serie-a'
+    'https://www.flashscore.com/football/spain/laliga'
     'https://www.flashscore.com/football/belarus/vysshaya-liga',
     'https://www.flashscore.com/football/brazil/serie-a',
     'https://www.flashscore.com/football/argentina/liga-profesional',
