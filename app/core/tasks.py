@@ -104,7 +104,7 @@ def ScrapeResult():
                       awayscore]
             all_matches.append(result)
         try:
-            league =url
+            league1 =driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/div[2]/div[1]/div[1]').text
         except:
             print('league')
         
@@ -112,6 +112,8 @@ def ScrapeResult():
             country = driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/h2/a[2]').text
         except:
             print('country')
+
+        league=f'{country}-{league1}'
 
         print(country)
 
