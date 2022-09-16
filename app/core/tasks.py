@@ -62,7 +62,7 @@ def ScrapeResult():
         max_show = 3
         count = 0
         
-        if(driver.find_elements(
+        if len(driver.find_elements(
                         By.LINK_TEXT, 'Show more matches')>0):
             while count <= max_show:
         
