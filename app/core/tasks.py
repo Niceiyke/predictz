@@ -2,6 +2,7 @@ import json
 from logging import exception
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import pandas as pd
@@ -68,10 +69,10 @@ def ScrapeResult():
                     show_more.click()
                     count += 1
 
-            except:
+            except NoSuchElementException:
+              
                 print("Oops!", sys.exc_info()[0])
-                print('only 1 page avaliable')
-                break
+                count=4
 
                 
         time.sleep(5)
