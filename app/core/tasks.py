@@ -12,6 +12,7 @@ from .models import Prediction
 from scipy.stats import poisson
 import numpy as np
 import os
+import sys
 
 time.sleep(5)
 
@@ -67,10 +68,10 @@ def ScrapeResult():
                     show_more.click()
                     count += 1
 
-            except:exception
-            print(exception)
-            print('only 1 page avaliable')
-            break
+            except:
+                print("Oops!", sys.exc_info()[0])
+                print('only 1 page avaliable')
+                break
 
                 
         time.sleep(5)
