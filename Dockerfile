@@ -6,6 +6,7 @@ RUN pip install -r /requirements.txt
 
 
 RUN mkdir /app
+RUN mkdir app/staticfiles
 COPY ./app /app
 WORKDIR /app
 
