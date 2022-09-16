@@ -1,4 +1,5 @@
 import json
+from logging import exception
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
@@ -60,18 +61,16 @@ def ScrapeResult():
         count = 0
         while count <= max_show:
             try:
-                if (driver.find_element( By.LINK_TEXT, 'Show more matches')):
                     show_more = driver.find_element(
                         By.LINK_TEXT, 'Show more matches')
                     time.sleep(5)
                     show_more.click()
                     count += 1
-                else:
-                    count = 4
 
-            except:
-                print('only 1 page avaliable')
-                break
+            except:exception
+            print(exception)
+            print('only 1 page avaliable')
+            break
 
                 
         time.sleep(5)
