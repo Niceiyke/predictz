@@ -69,7 +69,7 @@ def ScrapeResult():
                 print('only 1 page avaliable')
                 count=1
                 max_show=1
-                break
+                continue
 
                 
         time.sleep(5)
