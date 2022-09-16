@@ -31,6 +31,7 @@ def ScrapeResult():
     options.add_argument("--disable-dev-shm-using")  
     
     driver = webdriver.Remote('http://chrome:4444/wd/hub',options=options)
+    print(driver)
     urls = [
     'england/premier-league'
     'england/championship'
@@ -88,11 +89,13 @@ def ScrapeResult():
                 try:
                     hometeam = match.find_element(
                         By.CLASS_NAME, 'event__participant--home').text
+                    print(hometeam)
                 except:
                     print('no hometeam')
                 try:
                     awayteam = match.find_element(
                         By.CLASS_NAME, 'event__participant--away').text
+                    print(awayteam)
                 except:
                     print('no awayteam')
                 try:
