@@ -128,6 +128,7 @@ def ScrapeResult():
 
             df = pd.DataFrame(all_matches, columns=[
                 'Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG'])
+            print(df)
             df.loc[df['FTHG'] > df['FTAG'], 'FTR'] = 'H'
             df.loc[df['FTHG'] == df['FTAG'], 'FTR'] = 'D'
             df.loc[df['FTHG'] < df['FTAG'], 'FTR'] = 'A'
@@ -418,6 +419,7 @@ def ScrapeResult():
 
             df = pd.DataFrame(all_matches, columns=[
                 'Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG'])
+            print(df)
             df.loc[df['FTHG'] > df['FTAG'], 'FTR'] = 'H'
             df.loc[df['FTHG'] == df['FTAG'], 'FTR'] = 'D'
             df.loc[df['FTHG'] < df['FTAG'], 'FTR'] = 'A'
