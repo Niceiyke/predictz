@@ -66,8 +66,10 @@ def ScrapeResult():
                 show_more.click()
                 count += 1
             except:
-                print('done')
-                break
+                print('only 1 page avaliable')
+                count=1
+                max_show=1
+                
         time.sleep(5)
         matches = driver.find_elements(
             By.XPATH, '//div[@title="Click for match detail!"]')
