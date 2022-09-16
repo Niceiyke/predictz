@@ -110,10 +110,9 @@ def ScrapeResult():
         
         try:
             country = driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/h2/a[2]').text
+            league=f'{country}-{league1}'
         except:
             print('country')
-
-        league=f'{country}-{league1}'
 
         print(country)
 
