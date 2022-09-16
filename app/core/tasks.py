@@ -96,7 +96,7 @@ def ScrapeResult():
                 try:
                     awayteam = match.find_element(
                         By.CLASS_NAME, 'event__participant--away').text
-                    print('away',awayteam)
+         
                 except:
                     print('no awayteam')
                 try:
@@ -113,17 +113,17 @@ def ScrapeResult():
                 result = [date, hometeam, awayteam, homescore,
                         awayscore]
 
-                print('result is this', result)
+     
                     
                 all_matches.append(result)
-                print('matches', all_matches)
+             
             try:
                 league1 =driver.find_element(By.CLASS_NAME, 'heading__name').text
             except:
                 print('league')
             
             try:
-                country = driver.find_element(By.CLASS_NAME, 'breadcrumb__link').text
+                country = driver.find_elements(By.CLASS_NAME, 'breadcrumb__link')[1].text
                 league=f'{country}-{league1}'
             except:
                 print('country')
@@ -407,17 +407,17 @@ def ScrapeResult():
 
                 result = [date, hometeam, awayteam, homescore,
                         awayscore]
-                print('result',result)
+               
                     
                 all_matches.append(result)
-                print('matches', all_matches)
+              
             try:
                 league1 =driver.find_element(By.CLASS_NAME, 'heading__name').text
             except:
                 print('league')
             
             try:
-                country = driver.find_element(By.CLASS_NAME, 'breadcrumb__link').text
+                country = driver.find_elements(By.CLASS_NAME, 'breadcrumb__link')[1].text
                 league=f'{country}-{league1}'
             except:
                 print('country')
@@ -458,13 +458,13 @@ def ScrapeResult():
                 try:
                     hometeam = match.find_element(
                         By.CLASS_NAME, 'event__participant--home').text
-                    print(hometeam)
+                   
                 except:
                     print('No hometeam')
                 try:
                     awayteam = match.find_element(
                         By.CLASS_NAME, 'event__participant--away').text
-                    print(awayteam)
+                  
                 except:
                     print('No awayteam')
 
