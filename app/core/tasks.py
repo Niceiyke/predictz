@@ -123,7 +123,7 @@ def ScrapeResult():
                 print('league')
             
             try:
-                country = driver.find_elements(By.CLASS_NAME, 'breadcrumb__link')[1].text
+                country = (driver.find_elements(By.CLASS_NAME, 'breadcrumb__link')[1].text).lower()
                 league=f'{country}-{league1}'
             except:
                 print('country')
@@ -417,7 +417,7 @@ def ScrapeResult():
                 print('league')
             
             try:
-                country = driver.find_elements(By.CLASS_NAME, 'breadcrumb__link')[1].text
+                country = (driver.find_elements(By.CLASS_NAME, 'breadcrumb__link')[1].text).lower()
                 league=f'{country}-{league1}'
             except:
                 print('country')

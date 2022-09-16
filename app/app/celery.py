@@ -14,7 +14,7 @@ app.conf.timezone = 'Europe/London'
 app.conf.beat_schedule ={
     'scrape_result':{
         'task':'core.tasks.ScrapeResult',
-        'schedule': crontab(minute="*/2")
+        'schedule': crontab(minute="*/30")
     }
 }
 
