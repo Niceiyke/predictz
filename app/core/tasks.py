@@ -33,16 +33,16 @@ def ScrapeResult():
     driver = webdriver.Remote('http://chrome:4444/wd/hub',options=options)
     print(driver)
     urls = [
-    'england/premier-league'
-    'england/championship'
-    'england/league-one'
-    'england/league-two'
-    'germany/bundesliga'
-    'germany/2-bundesliga'
-    'italy/serie-a'
-    'spain/laliga'
-    'scotland/premiership'
-    'scotland/championship'
+    'england/premier-league',
+    'england/championship',
+    'england/league-one',
+    'england/league-two',
+    'germany/bundesliga',
+    'germany/2-bundesliga',
+    'italy/serie-a',
+    'spain/laliga',
+    'scotland/premiership',
+    'scotland/championship',
     'belarus/vysshaya-liga',
     'brazil/serie-a',
     'argentina/liga-profesional',
