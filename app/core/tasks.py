@@ -69,6 +69,8 @@ def ScrapeResult():
                 print('only 1 page avaliable')
                 count=1
                 max_show=1
+                break
+
                 
         time.sleep(5)
         matches = driver.find_elements(
