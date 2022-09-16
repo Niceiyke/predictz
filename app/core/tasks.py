@@ -60,16 +60,18 @@ def ScrapeResult():
         count = 0
         while count <= max_show:
             try:
-                show_more = driver.find_element(
-                    By.LINK_TEXT, 'Show more matches')
-                time.sleep(5)
-                show_more.click()
-                count += 1
+                if (driver.find_element( By.LINK_TEXT, 'Show more matches')):
+                    show_more = driver.find_element(
+                        By.LINK_TEXT, 'Show more matches')
+                    time.sleep(5)
+                    show_more.click()
+                    count += 1
+                else:
+                    count = 4
+
             except:
                 print('only 1 page avaliable')
-                count=1
-                max_show=1
-                continue
+                break
 
                 
         time.sleep(5)
