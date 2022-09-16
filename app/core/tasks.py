@@ -77,7 +77,7 @@ def ScrapeResult():
                                  
             time.sleep(5)
             matches = driver.find_elements(
-                By.XPATH, '//div[@title="Click for match detail!"]')
+                By.CSS_SELECTOR, 'div[title="Click for match detail!"]')
             for match in matches:
 
                 try:
@@ -117,12 +117,12 @@ def ScrapeResult():
                 all_matches.append(result)
                 print('matches', all_matches)
             try:
-                league1 =driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/div[2]/div[1]/div[1]').text
+                league1 =driver.find_element(By.CLASS_NAME, 'heading__name').text
             except:
                 print('league')
             
             try:
-                country = driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/h2/a[2]').text
+                country = driver.find_element(By.CLASS_NAME, 'breadcrumb__link').text
                 league=f'{country}-{league1}'
             except:
                 print('country')
@@ -372,7 +372,7 @@ def ScrapeResult():
                 obj.save()
         else:
             matches = driver.find_elements(
-                            By.XPATH, '//div[@title="Click for match detail!"]')
+                            By.CSS_SELECTOR, 'div[title="Click for match detail!"]')
             for match in matches:
 
                 try:
@@ -411,12 +411,12 @@ def ScrapeResult():
                 all_matches.append(result)
                 print('matches', all_matches)
             try:
-                league1 =driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/div[2]/div[1]/div[1]').text
+                league1 =driver.find_element(By.CLASS_NAME, 'heading__name').text
             except:
                 print('league')
             
             try:
-                country = driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/h2/a[2]').text
+                country = driver.find_element(By.CLASS_NAME, 'breadcrumb__link').text
                 league=f'{country}-{league1}'
             except:
                 print('country')
