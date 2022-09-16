@@ -102,7 +102,9 @@ def ScrapeResult():
 
             result = [date, hometeam, awayteam, homescore,
                       awayscore]
+                
             all_matches.append(result)
+            print('matches', all_matches)
         try:
             league1 =driver.find_element(By.XPATH, '//*[@id="mc"]/div[4]/div[1]/div[2]/div[1]/div[1]').text
         except:
