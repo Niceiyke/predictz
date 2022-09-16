@@ -73,12 +73,13 @@ def ScrapeResult():
                 time.sleep(5)
                 show_more.click()
                 count += 1
-   
-
-                                 
+                          
             time.sleep(5)
-            matches = driver.find_elements(
-                By.CSS_SELECTOR, 'div[title="Click for match detail!"]')
+            try:
+                matches = driver.find_elements(
+                    By.CSS_SELECTOR, 'div[title="Click for match detail!"]')
+            except NoSuchElementException:
+                print('not found')
             for match in matches:
 
                 try:
@@ -441,9 +442,11 @@ def ScrapeResult():
 
             driver.get(f'https://www.flashscore.com/football/{url}/fixtures/')
             all_fixtures = []
-            matches = driver.find_elements(
-                By.CLASS_NAME, 'event__match--scheduled')[0:14]
-
+            try:
+                matches = driver.find_elements(
+                    By.CSS_SELECTOR, 'div[title="Click for match detail!"]')
+            except NoSuchElementException:
+                print('not found')
             for match in matches:
 
                 try:
