@@ -89,13 +89,13 @@ def ScrapeResult():
                 try:
                     hometeam = match.find_element(
                         By.CLASS_NAME, 'event__participant--home').text
-                    print(hometeam)
+                    print('home',hometeam)
                 except:
                     print('no hometeam')
                 try:
                     awayteam = match.find_element(
                         By.CLASS_NAME, 'event__participant--away').text
-                    print(awayteam)
+                    print('away',awayteam)
                 except:
                     print('no awayteam')
                 try:
@@ -384,11 +384,13 @@ def ScrapeResult():
                 try:
                     hometeam = match.find_element(
                         By.CLASS_NAME, 'event__participant--home').text
+                    print('home',hometeam)
                 except:
                     print('no hometeam')
                 try:
                     awayteam = match.find_element(
                         By.CLASS_NAME, 'event__participant--away').text
+                    print('away',awayteam)
                 except:
                     print('no awayteam')
                 try:
@@ -404,6 +406,7 @@ def ScrapeResult():
 
                 result = [date, hometeam, awayteam, homescore,
                         awayscore]
+                print('result',result)
                     
                 all_matches.append(result)
                 print('matches', all_matches)
