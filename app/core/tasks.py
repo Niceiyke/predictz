@@ -114,7 +114,6 @@ def ScrapeResult():
         except:
             print('country')
 
-        print(country)
 
         df = pd.DataFrame(all_matches, columns=[
             'Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG'])
