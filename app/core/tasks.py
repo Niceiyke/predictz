@@ -61,18 +61,22 @@ def ScrapeResult():
         driver.get(f'https://www.flashscore.com/football/{url}/results/')
         max_show = 3
         count = 0
-        while count <= max_show:
-            try:
-                    show_more = driver.find_element(
-                        By.LINK_TEXT, 'Show more matches')
-                    time.sleep(5)
-                    show_more.click()
-                    count += 1
+        
+        if(driver.find_element(
+                        By.LINK_TEXT, 'Show more matches') != NoSuchElementException):
+            while count <= max_show:
+                try:
+                        show_more = driver.find_element(
+                            By.LINK_TEXT, 'Show more matches')
+                        time.sleep(5)
+                        show_more.click()
+                        count += 1
 
-            except NoSuchElementException:
-              
-                print("Oops!", sys.exc_info()[0])
-                count=4
+                except NoSuchElementException:
+                
+                    print("Oops!", sys.exc_info()[0])
+        
+                    
 
                 
         time.sleep(5)
