@@ -448,11 +448,13 @@ def ScrapeResult():
                 try:
                     hometeam = match.find_element(
                         By.CLASS_NAME, 'event__participant--home').text
+                    print(hometeam)
                 except:
                     print('No hometeam')
                 try:
                     awayteam = match.find_element(
                         By.CLASS_NAME, 'event__participant--away').text
+                    print(awayteam)
                 except:
                     print('No awayteam')
 
