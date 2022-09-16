@@ -111,6 +111,8 @@ def ScrapeResult():
 
                 result = [date, hometeam, awayteam, homescore,
                         awayscore]
+
+                print('result is this', result)
                     
                 all_matches.append(result)
                 print('matches', all_matches)
